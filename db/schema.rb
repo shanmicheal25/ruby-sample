@@ -12,7 +12,7 @@
 
 ActiveRecord::Schema.define(version: 2021_09_29_062211) do
 
-  create_table "words", force: :cascade do |t|
+  create_table "words", charset: "utf8", force: :cascade do |t|
     t.string "value"
     t.string "language"
     t.datetime "created_at", precision: 6, null: false
