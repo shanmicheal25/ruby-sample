@@ -19,6 +19,7 @@ gem 'simple_form'
 group :development, :test do
   gem 'rspec-rails', '~> 5.0.0'
   gem 'rails-controller-testing'
+  gem 'pry-rails'
 end
 
 group :development do
@@ -31,6 +32,7 @@ group :test do
   gem 'capybara', '>= 3.26'
   gem 'selenium-webdriver'
   gem 'webdrivers'
+  gem 'factory_bot_rails'
   gem 'shoulda-matchers', '~> 5.0'
 end
 
