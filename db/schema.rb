@@ -10,13 +10,21 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_09_30_052639) do
+ActiveRecord::Schema.define(version: 2021_09_30_063226) do
 
-  create_table "words", charset: "utf8", force: :cascade do |t|
-    t.string "content"
-    t.string "language"
+  create_table "languages", charset: "utf8", force: :cascade do |t|
+    t.string "name"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
 
+  create_table "words", charset: "utf8", force: :cascade do |t|
+    t.string "content"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.bigint "language_id"
+    t.index ["language_id"], name: "index_words_on_language_id"
+  end
+
+  add_foreign_key "words", "languages"
 end

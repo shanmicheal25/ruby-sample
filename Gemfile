@@ -16,6 +16,7 @@ gem 'bootsnap', '>= 1.4.4', require: false
 gem 'bootstrap', '~> 5.1.0'
 gem 'simple_form'
 gem 'jquery-rails'
+gem 'language_list', '~> 1.2', '>= 1.2.1'
 
 
 
