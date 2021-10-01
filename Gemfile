@@ -18,12 +18,15 @@ gem 'simple_form'
 gem 'jquery-rails'
 gem 'language_list', '~> 1.2', '>= 1.2.1'
 
+gem 'devise', '~> 4.8'
+
 
 
 group :development, :test do
   gem 'rspec-rails', '~> 5.0.0'
   gem 'rails-controller-testing'
   gem 'pry-rails'
+
 end
 
 group :development do
@@ -38,6 +41,7 @@ group :test do
   gem 'webdrivers'
   gem 'factory_bot_rails'
   gem 'shoulda-matchers', '~> 5.0'
+  gem 'faker'
 end
 
 
