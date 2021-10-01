@@ -13,6 +13,8 @@
       %th
         Language 
       %th
+        User 
+      %th
         Actions
         %tbody
         - @words.each do |word|
@@ -24,6 +26,9 @@
             %td
               = word.language&.name
             %td
+              = word.user&.email
+            %td
               = link_to('Show', word_path(word), class: 'btn btn-primary')
-              = link_to('Edit', edit_word_path(word), class: 'btn btn-primary')
-              = link_to('Delete', word_path(word), class: 'btn btn-danger', method: :delete)
+              - if word.user == current_user
+                = link_to('Edit', edit_word_path(word), class: 'btn btn-primary')
+                = link_to('Delete', word_path(word), class: 'btn btn-danger', method: :delete)

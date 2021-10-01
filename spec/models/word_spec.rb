@@ -7,6 +7,7 @@ RSpec.describe Word, type: :model do
 
   describe 'association' do
     it { is_expected.to belong_to(:language) } 
+    it { is_expected.to belong_to(:user) } 
   end
 
   describe 'validates' do
