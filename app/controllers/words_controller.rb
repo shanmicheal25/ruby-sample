@@ -3,7 +3,7 @@ class WordsController < ApplicationController
     before_action :set_word, only: %i[show edit update destroy]
 
     def index 
-        @words = Word.all
+        @words = Word.page params[:page]
     end
 
     def new 
@@ -22,9 +22,12 @@ class WordsController < ApplicationController
 
     def show; end
 
-    def edit; end
+    def edit 
+      authorize @word
+    end
 
     def update
+      authorize @word
       if @word.update(word_params)
         redirect_to(words_path(@word))
       else
